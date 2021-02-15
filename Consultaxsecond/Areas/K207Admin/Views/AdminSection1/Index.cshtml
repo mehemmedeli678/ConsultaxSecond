@@ -1,0 +1,35 @@
+﻿@model List<Section1>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1>Section1</h1>
+<a href="/k207admin/adminsection1/create">create</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Sub Header</th>
+            <th>Header</th>
+            <th>description</th>
+            <th>Photo</th>
+            <th>#</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sect in Model)
+        {
+        <tr>
+            <td>@sect.SubHeader</td>
+            <td>@sect.Header</td>
+            <td>@sect.description</td>
+            <td>@sect.PhotoUrl</td>
+            <td>
+                <a href="/k207admin/adminsection1/edit/@sect.ID">Edit</a>|
+                <a href="/k207admin/adminsection1/delete/@sect.ID">delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
